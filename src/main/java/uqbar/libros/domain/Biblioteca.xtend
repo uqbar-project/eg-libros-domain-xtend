@@ -35,17 +35,33 @@ class Biblioteca {
 		libros.add(new Libro(id, titulo, autor))
 		id = id + 1
 	}
-
+	
+	def void eliminarLibro(Libro libro) {
+		libros.remove(libro)
+	}
+	
 	def List<Libro> buscar(String titulo) {
 		libros.filter [ libro | libro.titulo.contains(titulo) ].toList
 	}
 
 	def Libro getLibro(int id) {
-		val libro = libros.findFirst [ libro | libro.id == id ]
-		if (libro != null) {
+		val libro = libros.findFirst [ 
+			it.id == id
+		]
+		if (libro == null) {
 			throw new RuntimeException("No tengo ese libro, man. (el del id = " + id + ")")
 		}
 		libro
 	}
-	
+	def todos() {
+		libros.clone
+	}
+
+	def actualizarLibro(Libro actualizado) {
+		var Libro libro = getLibro(actualizado.id)
+		libro.titulo = actualizado.titulo
+		libro.autor = actualizado.autor
+		libro.editorial  = actualizado.editorial
+		libro.anioPublicacion  = actualizado.anioPublicacion
+	}
 }
