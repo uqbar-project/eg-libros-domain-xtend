@@ -11,9 +11,9 @@ class Biblioteca {
 	int id = 0
 
 	new() {
-		this.addLibro("Las venas abiertas de América Latina", "Eduardo Galeano")
-		this.addLibro("Guerra y Paz", "León Tolstoi")
-		this.addLibro("Patas Arriba", "Eduardo Galeano")
+		this.addLibro("Las venas abiertas de América Latina", "Eduardo Galeano", 1971)
+		this.addLibro("Guerra y Paz", "León Tolstoi", 1867)
+		this.addLibro("Patas Arriba", "Eduardo Galeano", 1998)
 		this.addLibro("El fútbol a sol y a sombra", "Eduardo Galeano")
 		this.addLibro("Historia del siglo XX", "Eric Hobsbawm")
 		this.addLibro("Ficciones", "Jorge Luis Borges")
@@ -31,8 +31,16 @@ class Biblioteca {
 		return instance
 	}
 
+	def void addLibro(String titulo, String autor, Integer anio) {
+		addLibro(new Libro(id, titulo, autor) => [anioPublicacion = anio])
+	}
+
 	def void addLibro(String titulo, String autor) {
-		libros.add(new Libro(id, titulo, autor))
+		addLibro(new Libro(id, titulo, autor))
+	}
+
+	def void addLibro(Libro libro) {
+		libros.add(libro)
 		id = id + 1
 	}
 	
