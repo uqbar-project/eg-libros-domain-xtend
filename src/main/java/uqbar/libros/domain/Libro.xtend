@@ -1,7 +1,7 @@
 package uqbar.libros.domain
 
 import org.eclipse.xtend.lib.annotations.Accessors
-import org.uqbar.commons.model.UserException
+import org.uqbar.commons.model.exceptions.UserException
 
 @Accessors
 class Libro {
@@ -24,13 +24,13 @@ class Libro {
 	}
 
 	def void validar() {
-		if (autor == null) {
+		if (autor === null) {
 			throw new UserException("Debe ingresar autor")
 		}
-		if (titulo == null) {
+		if (titulo === null) {
 			throw new UserException("Debe ingresar título")
 		}
-		if (anioPublicacion != null && anioPublicacion < MIN_ANIO_PUBLICACION) {
+		if (anioPublicacion !== null && anioPublicacion < MIN_ANIO_PUBLICACION) {
 			throw new UserException("El año de publicación debe ser posterior a " + MIN_ANIO_PUBLICACION)
 		}
 	}

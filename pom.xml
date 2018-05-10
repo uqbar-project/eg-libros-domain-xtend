@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>libros-domain-xtend</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 	<description>Busqueda de libros / dominio compartido para todos los proyectos</description>
 
-<repositories>
+	<repositories>
 		<repository>
 			<id>uqbar-wiki.org-releases</id>
 			<name>uqbar-wiki.org-releases</name>
@@ -18,7 +19,7 @@
 			<url>http://uqbar-wiki.org/mvn/snapshots</url>
 		</repository>
 	</repositories>
-	
+
 	<parent>
 		<groupId>org.uqbar-project</groupId>
 		<artifactId>uqbar-examples-xtend-parent</artifactId>
@@ -29,7 +30,7 @@
 		<dependency>
 			<groupId>org.uqbar-project</groupId>
 			<artifactId>uqbar-domain</artifactId>
-			<version>3.5.1</version>
+			<version>3.6.3</version>
 		</dependency>
 	</dependencies>
 </project>

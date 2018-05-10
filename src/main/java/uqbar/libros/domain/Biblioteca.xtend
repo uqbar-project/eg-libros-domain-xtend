@@ -56,7 +56,7 @@ class Biblioteca {
 		val libro = libros.findFirst [ 
 			it.id == id
 		]
-		if (libro == null) {
+		if (libro === null) {
 			throw new RuntimeException("No tengo ese libro, man. (el del id = " + id + ")")
 		}
 		libro
